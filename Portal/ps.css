@@ -1,0 +1,125 @@
+:root{
+  --most-dark: #000000;
+  --dark-2: #121212;
+  --dark-3: #1a1a1a;
+  --dark-4: #222222;
+  --most-light: #ffffff;
+  --light-2: #f0f0f0;
+  --light-3: #e0e0e0;
+  --light-4: #d0d0d0;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  
+  #mainContainer {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    background-color: #000;
+    overflow: hidden;
+    padding: 1rem;
+  }
+
+
+  #PSContainer {
+    display: flex;
+    width: 100%;
+    height: 100%;
+  }
+  
+#appRight, #appCenter {
+    height: 100%;
+    position: relative;
+  }
+
+  
+  .resizer {
+    width: 5px;
+    height: 100%;
+    background-color: #000;
+    cursor: ew-resize;
+    position: absolute;
+    top: 0;
+    z-index: 1;
+    transition: background-color 0.2s;
+  }
+  
+ 
+  
+  #appRight .resizer {
+    left: -5px;
+  }
+  
+  .resizer:hover {
+    background-color: rgba(255, 255, 255, 0.6);
+  }
+  
+
+  #projectScreen{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    padding-right: 1rem;
+    flex-direction: column;
+    font-family: 'Arial', sans-serif;
+    background-color: #121212;
+    border-radius: 1rem 0 0 1rem;
+    position: relative;
+  }
+
+  #closeBtn{
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    z-index: 2;
+    background-color: #ffffff;
+    color: #000;
+
+  }
+
+  .projectDetail{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+
+  }
+
+  .projectImg{
+    max-width: 100%;
+    height: 40vh;
+    border-radius: 1rem 1rem 0 0;
+    margin-bottom: 1rem;
+  }
+  .projectDetail h2{
+    font-size: 2rem;
+  }
+
+  .card-button{
+    width: 20%;
+    margin: 1rem 0;
+    height: 40px;
+  }
+
+
+  /* media queries for mobile screen */
+  @media screen and (max-width: 768px){
+    #PSContainer{
+      flex-direction: column;
+    }
+    #appRight{
+      height: 50%;
+    }
+    #appCenter{
+      height: 50%;
+    }
+  }
+  

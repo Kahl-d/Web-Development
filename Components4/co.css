@@ -1,0 +1,200 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&display=swap");
+
+:root {
+	--body-color: #2c2d2a;
+	--savanna-bg: #e9bf8b;
+	--beach-bg: #e7dfcf;
+	--glacier-bg: #b6d6c8;
+	--coral-bg: #e86357;
+	--arrow-fill: #333231;
+	--body-font: "Montserrat", sans-serif;
+	--italic-font: "EB Garamond", serif;
+}
+
+* {
+	box-sizing: border-box;
+	outline: none;
+}
+
+
+#colorContainer {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    padding: 2rem;
+    font-family: 'Roboto', sans-serif;
+    transition: background-color 0.3s ease;
+    position: relative;
+    color: #333231;
+    
+  }
+
+  #projectCounter{
+    position: absolute;
+    top: 10%;
+    right: 10%;
+    font-size: 1rem;
+    color: #333231;
+  }
+  
+  #projectText {
+    width: 50%;
+    height: 80%;
+    margin-bottom: 20px;
+    color: #333231;
+    display: flex;
+    flex-direction: column;
+    font-family: var(--italic-font);
+}
+  
+  #projectText h1 {
+    font-size: 5rem;
+    margin-bottom: 10px;
+    font-family: var(--italic-font);
+  }
+  
+  #projectText p {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    font-family: var(--body-font);
+  }
+  
+  #projectText a {
+    font-size: 1rem;
+    color: #333231;
+    text-decoration: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 120px;
+  }
+  
+  #projectText a:hover {
+    text-decoration: underline;
+  }
+
+
+  #projectCarousel {
+    display: flex;
+    width: 50%;
+    justify-content: center;
+    align-items: center;
+    perspective: 1000px;
+    
+  }
+  
+  .projectCard {
+    width: 40vw;
+    max-width: 300px;
+    transition: transform 0.5s, opacity 0.5s;
+  }
+  
+  .projectCard img {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+  }
+  
+  .projectCard.active {
+    width: 50vw;
+    transform: rotateY(0deg) translateX(0%);
+    opacity: 1;
+    z-index: 3;
+  }
+  
+  .projectCard.left {
+    transform: rotateY(60deg) translateX(-100%);
+    opacity: 0.2;
+    z-index: 2;
+  }
+  
+  .projectCard.right {
+    transform: rotateY(-60deg) translateX(100%);
+    opacity: 0.2;
+    z-index: 2;
+  }
+  
+  #buttons {
+    position: absolute;
+    bottom: 10%;
+    right: 10%;
+    display: flex;
+    gap: 10px;
+    
+  }
+  
+  #buttons div {
+    width: 40px; /* Set equal width and height to make it a circle */
+    height: 40px;
+    display: flex; /* Center the text inside the circle */
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border: 1px solid #333231;
+    border-radius: 50%;
+    color: #333231;
+  }
+  #buttons div:hover {
+    background-color: #ddd;
+  }
+  
+
+  @media (max-width: 768px) {
+    #colorContainer {
+      flex-direction: column;
+    }
+  
+    #projectText {
+      width: 100%;
+      height: 50%;
+    }
+  
+    #projectText h1{
+        font-size: 2rem;
+        
+    }
+
+    #projectText p {
+      font-size: 1rem;
+    }
+
+    #projectImage {
+      width: 80%;
+    }
+
+    #projectCounter {
+      top: 5%;
+      right: 5%;
+    }
+
+
+    #projectCarousel {
+      width: 100%;
+      height: 50%;
+    }
+
+    .projectCard.left {
+        width: 50%;
+        height: 50%;
+      }
+      
+      .projectCard.right {
+        width: 50%;
+        height: 50%;
+      }
+      
+
+
+  
+    #buttons {
+      bottom: 5%;
+      right: 5%;
+    }
+  }

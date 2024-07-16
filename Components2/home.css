@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Tiny5&display=swap');
+
+#homeContainer{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    position: relative;
+    background-color: #1e1e1e;
+    color: white;
+    overflow: hidden;
+}
+
+#homeImage img{
+    height: 80%;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: 100;
+}
+
+#homeContent{
+    width: 100%;
+    height: 100%;
+}
+
+#homeText{
+    /* poppins big font */
+    font-family: 'Poppins', sans-serif;
+    font-size: 2rem;
+    margin: 2rem;
+    margin-bottom: 0;
+}
+#homeText h1{
+    font-size: 6rem;
+}
+#homeText *{
+    font-family: "Tiny5", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+#homeText p{
+    font-family: 'Poppins', sans-serif;
+    
+    font-size: 1.2rem;
+    margin: 0;
+}
+
+#homeAbout{
+    width: 50%;
+    margin: 2rem;
+}
+
+
+.infoDiv:hover .info{
+    width: fit-content;
+    font-size: 1rem;
+    margin: 1rem;
+
+}
+
+
+  #wave{
+    width: 110%;
+    z-index: 1;
+    position: absolute;
+
+    bottom: -1%;
+  }
+

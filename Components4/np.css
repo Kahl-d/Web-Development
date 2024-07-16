@@ -1,0 +1,163 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --most-dark: #000000;
+    --dark-2: #121212;
+    --dark-3: #1a1a1a;
+    --dark-4: #222222;
+    --most-light: #ffffff;
+    --light-2: #f0f0f0;
+    --light-3: #e0e0e0;
+    --light-4: #d0d0d0;
+}
+
+#newProjectsContainer {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--most-dark);
+    overflow: hidden;
+    position: relative;
+}
+
+#projectCarousel {
+    position: relative;
+    width: 40%;
+    height: 40%;
+    perspective: 1000px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.projectCard {
+    position: absolute;
+    width: 80%;
+    height: fit-content;
+    background-color: var(--dark-2);
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: transform 1s, opacity 1s;
+    backface-visibility: hidden;
+    padding: 0;
+    padding-bottom: 2rem;
+}
+
+.projectCard img {
+    width: 100%;
+    height: 50%;
+    border-radius: 10px 10px 0 0;
+}
+
+.projectCard h3 {
+    margin: 10px;
+    font-size: 1.5rem;
+    color: var(--most-light);
+}
+
+.projectCard p {
+    margin: 10px;
+    font-size: 0.8rem;
+    color: var(--most-light);
+    text-align: center;
+}
+
+.projectCard a {
+    margin: 10px;
+    font-size: 1rem;
+    color: var(--most-light);
+    text-decoration: none;
+    background-color: var(--dark-3);
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+
+.projectCard.active {
+    transform: translateZ(300px);
+    opacity: 1;
+    z-index: 2;
+}
+
+.projectCard.left {
+    width: 60%;
+    transform: rotateY(60deg) translateX(-100%);
+    opacity: 0.2;
+    z-index: 1;
+}
+
+.projectCard.right {
+    width: 60%;
+
+    transform: rotateY(-60deg) translateX(100%);
+    opacity: 0.2;
+    z-index: 1;
+}
+
+#carouselControls {
+    position: absolute;
+    bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    width: 20%;
+}
+
+.carouselButton {
+    background-color: var(--dark-3);
+    color: var(--most-light);
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.carouselButton:hover {
+    background-color: var(--dark-4);
+}
+
+@media (max-width: 768px) {
+    #projectCarousel {
+        width: 80%;
+        height: 60%;
+    }
+
+    .projectCard {
+        width: 60%;
+        height: 90%;
+    }
+
+
+    .projectCard h3 {
+        font-size: 1rem;
+    }
+
+    .projectCard p {
+        font-size: 0.5rem;
+    }
+
+    .projectCard a {
+        font-size: 0.6rem;
+        padding: 8px 16px;
+    }
+
+    #carouselControls {
+        width: 60%;
+    }
+
+    .carouselButton {
+        padding: 8px 16px;
+    }
+}
